@@ -1,0 +1,18 @@
+.chartBox{
+    height: 200px;
+    width: 500px;
+  }
+
+#tableCSSlendin{
+  border-collapse: collapse;
+  width: 50%;
+}
+#tableCSSlendin td, th{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#tableCSSlendin th{
+  background-color: #a4dfd5;
+}
+#tableCSSlendin tr:nth-child(even){background-color: #f2f2f2;}
+#tableCSSlendin tr:hover{background-color: #ddd;}
