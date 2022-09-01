@@ -126,12 +126,12 @@ export class AppComponent implements OnInit {
     //assinging the new projects of a group to an array
     this.projects1 = await this.groupApiCall(id3).toPromise();
   
-        this.projects1.forEach((abc: any) => {
+        this.projects1.forEach((project: any) => {
           
           this.projects.push(
             {
-              "id": abc.id,
-              "name": abc.name
+              "id": project.id,
+              "name": project.name
             }
           );
         });
@@ -172,12 +172,12 @@ export class AppComponent implements OnInit {
 
       this.charts = await this.apiCall(this.form.value.id[j], this.dateSince1, this.dateUntil1).toPromise();
 
-      this.charts.forEach((abc: any) => {
+      this.charts.forEach((commit: any) => {
         
-          if (this.committerMailsUnique.includes(abc.committer_email)) {
+          if (this.committerMailsUnique.includes(commit.committer_email)) {
 
-          } else if(abc.committer_email.includes("yourEmailExtension")){
-            this.committerMailsUnique.push(abc.committer_email)
+          } else if(commit.committer_email.includes("yourEmailExtension")){
+            this.committerMailsUnique.push(commit.committer_email)
           }     
 
       });
@@ -208,11 +208,11 @@ export class AppComponent implements OnInit {
   async onFormSubmit() {
 
     //declaration of an array to print canvas.
-    for (let abc in this.form.value.id) {
-      this.formDeger.push(this.form.value.id[abc]);
+    for (let index in this.form.value.id) {
+      this.formDeger.push(this.form.value.id[index]);
     }
-    for(let abc in this.form.value.committer_email){
-      this.mailHolder.push(this.form.value.committer_email[abc]);
+    for(let index in this.form.value.committer_email){
+      this.mailHolder.push(this.form.value.committer_email[index]);
     }
 
     for (let k=0;k<this.form.value.id.length;k++) {
@@ -221,11 +221,11 @@ export class AppComponent implements OnInit {
       //it makes an api call for the given project id.
       this.charts =await this.apiCall(this.form.value.id[k], this.dateSince1, this.dateUntil1).toPromise();
 
-      this.charts.forEach((abc:any) => {        
+      this.charts.forEach((commit:any) => {        
         //getting committer names and titles and pushing them to an array.
-          if(abc.committer_email.includes("yourMailExtension")){          
-            this.committerNames.push(abc.committer_email);
-            this.committerTitles.push(abc.title);
+          if(commit.committer_email.includes("yourMailExtension")){          
+            this.committerNames.push(commit.committer_email);
+            this.committerTitles.push(commit.title);
           }
           else{
           }       

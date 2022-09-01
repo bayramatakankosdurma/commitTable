@@ -32,9 +32,9 @@
           currentPage: pageProjects
         };">
 
-            <input type="checkbox" class="form-check-input" id="{{project.id+1233}}" value="{{project.id}}"
+            <input type="checkbox" class="form-check-input" id="{{project.id+'a'}}" value="{{project.id}}"
               (change)="changedProject(project.id, project.name, $any($event.target)?.checked)">
-            <label class="form-check-label ps-2" for="{{project.id+533}}">{{project.name}}</label>
+            <label class="form-check-label ps-2" for="{{project.id+'a'}}">{{project.name}}</label>
 
           </div>
           <div class="d-flex justify-content-left">
@@ -76,11 +76,11 @@
 
 
 
-    <div class="row pt-3" *ngFor="let abow of formDeger; index as index1">
+    <div class="row pt-3" *ngFor="let projectId of formDeger; index as index1">
 
       <div class="chartBox col-sm-6">
         <div style="border:1px solid #ddd;">
-          <canvas id="{{abow}}"></canvas>
+          <canvas id="{{projectId}}"></canvas>
         </div>
       </div>
 
@@ -96,9 +96,9 @@
               Number of Commits
             </th>
           </tr>
-          <tr *ngFor="let abc of mailHolder;index as index2">
+          <tr *ngFor="let mail of mailHolder;index as index2">
             <td>
-              {{mailSplitter(abc)}}
+              {{mailSplitter(mail)}}
             </td>
             <td>
               {{setTableData(index1, index2)}}
