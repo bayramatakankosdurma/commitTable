@@ -11,7 +11,10 @@
 &nbsp;In order to use project for your intentions, need to make a few changes in project. You will make the changes in app.component.ts file. Open it and make these following changes:
 1)You need to change namespace. In line 83, 103, 142 and 190, erase the yourNameSpace.com and put your own namespace.
 2)You need to change mail extension. In line 179 and 226, erase the yourEmailExtension and put the mail extension of your company. This will make the project bring only the company related committers.
+  </p>
 <br>
+<br>
+<p>
 After the changes, you are ready to use the project. When the editor is in project folder, open a new terminal and type "ng s". Then submit a token and see the magic.
 </p>
 
